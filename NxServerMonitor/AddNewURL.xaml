@@ -1,0 +1,18 @@
+﻿<Window x:Class="NxServerMonitor.AddNewURL"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NxServerMonitor"
+        mc:Ignorable="d"
+        Title="AddNewURL" Height="200" Width="200">
+    <Grid Background="#FFFEFEFE">
+        <TextBox x:Name="urlTextBox" HorizontalAlignment="Left" Height="23" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172"/>
+        <Button x:Name="save" Content="Save" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="72,0,61,10" Width="59" Height="29" Click="save_Click"  BorderBrush="Black"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Set URL" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="10,59,0,0" TextWrapping="Wrap" Text="Set type" VerticalAlignment="Top"/>
+        <ComboBox x:Name="urlComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="35,83,0,0" />
+    </Grid>
+
+
+</Window>

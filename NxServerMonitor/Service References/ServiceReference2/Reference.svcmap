@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="854bb209-16bb-4f94-829f-2dd7a8665297" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://portal.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8f675e42-8e72-459f-870f-db80bc3ee803" SourceId="1" SourceUrl="https://portal.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="d60f2486-903c-4598-a61f-99a594b3e8d1" SourceId="1" SourceUrl="https://portal.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="46f8b136-731e-4d55-8c9c-99100d12d805" SourceId="1" SourceUrl="https://portal.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc/mex" />
+    <MetadataFile FileName="ServerMonitor.Model.xsd" MetadataType="Schema" ID="6745fea2-7af5-4fa2-a5b9-f42a9148e1bf" SourceId="1" SourceUrl="https://portal.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

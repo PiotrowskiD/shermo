@@ -1,0 +1,56 @@
+﻿<Page x:Class="NxServerMonitor.ServersList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NxServerMonitor"
+        mc:Ignorable="d"
+        Title="ServersList" Height="auto" Width="auto" Background="#FFFEFEFE">
+    <Grid Name="mainGrid" AllowDrop="True">
+        <Frame x:Name="mainFrame" />
+        <TextBlock x:Name="groupName" FontSize="24" Text="nazwa"  HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20"/>
+        <ListView x:Name="serversList" 
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled" 
+              ScrollViewer.VerticalScrollBarVisibility="Visible"
+              ItemsSource="{Binding list}"
+              BorderBrush="{x:Null}" Background="{x:Null}" Margin="0,100,0,0" MouseDoubleClick="selectServer" MouseRightButtonUp="serversList_MouseRightButtonUp">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="local:ServerViewModel">
+                    <Grid Width="332" Height="150" Background="#FFECECEC" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.3*"/>
+                            <ColumnDefinition Width="0.7*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                        </Grid.RowDefinitions>
+                        <Image x:Name="icon" Source="{Binding Icon}" Grid.Column="0" Stretch="None"/>
+                        <TextBlock Text="{Binding DomainName}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Foreground="Black"/>
+                      
+                        <!--<TextBlock Grid.Column="1" Grid.ColumnSpan="3" Text="{Binding IP}" FontSize="16" VerticalAlignment="Center"/>-->
+                        <!--<TextBlock Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="3" Text="{Binding Key}" TextWrapping="Wrap"/>-->
+                        <!--<Grid Name="DiskControl" Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="1" Width="20" Height="20" HorizontalAlignment="Left" Background="{Binding DiskColor}"/>
+                        <TextBlock Text="Disks" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="25, 0, 0, 10"></TextBlock>
+
+                        <Grid Name="CpuControl" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="1" Width="20" Height="20" HorizontalAlignment="Center" Background="{Binding CpuColor}"/>
+                        <TextBlock Text="{Binding Cpu}" Grid.Row="2" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="95, 0, 0, 10"></TextBlock>-->
+
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="Padding" Value="0"/>
+                    <Setter Property="Margin" Value="6"/>
+                </Style>
+            </ListView.ItemContainerStyle>
+        </ListView>
+
+        <!--<CheckBox x:Name="checkBox" Content="CHECK SERVERS" HorizontalAlignment="Right" VerticalAlignment="Top" Checked="checkBox_Checked" Margin="0,0,0,0"/>-->
+        <!--<Button x:Name="button" Content="Back" HorizontalAlignment="Left" VerticalAlignment="Top" Width="49" Margin="28,28,0,0" Height="24" Background="#FFC9DAFF" FontFamily="Book Antiqua" FontWeight="Bold" Click="button_Click" />-->
+    </Grid>
+</Page>

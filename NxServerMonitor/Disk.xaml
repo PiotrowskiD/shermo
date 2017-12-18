@@ -1,0 +1,54 @@
+﻿<Page x:Class="NxServerMonitor.Disk"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NxServerMonitor"
+        mc:Ignorable="d"
+        Title="Disk" Height="auto" Width="auto" Background="#FFFEFEFE">
+    <Grid Name="MyGrid">
+        <TextBlock FontFamily="Book Antiqua" FontSize="72" FontWeight="Bold" TextAlignment="Center" Text="DISK" Background="Transparent"/>
+        <FlowDocumentScrollViewer Margin="0,75,0,0" FontFamily="Book Antiqua">
+            <FlowDocument>
+                <Table x:Name="DiskTable">
+                    <Table.Columns>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Book Antiqua" Text="Check Time"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Book Antiqua" Text="Name"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Book Antiqua" Text="Total Size"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Book Antiqua" Text="Free Space"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell BorderBrush="Black" BorderThickness="1">
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Book Antiqua" Text="Percent of Free Space"/>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Page>

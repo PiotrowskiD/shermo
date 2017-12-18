@@ -1,0 +1,7 @@
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\bin\Release\ServerMonitor.Model.dll
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\bin\Release\ServerMonitor.Model.pdb
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\bin\Release\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\bin\Release\System.Windows.Controls.DataVisualization.Toolkit.xml
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\obj\Release\ServerMonitor.Model.dll
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\obj\Release\ServerMonitor.Model.pdb
+C:\Users\zuziaa\Desktop\staf\nexpertis\NX_ServerMonitor\ServerMonitor.Model\obj\Release\ServerMonitor.Model.csprojResolveAssemblyReference.cache

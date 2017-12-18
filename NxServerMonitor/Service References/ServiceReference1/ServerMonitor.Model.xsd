@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/ServerMonitor.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ServerMonitor.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfDiskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DiskInfo" nillable="true" type="tns:DiskInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDiskInfo" nillable="true" type="tns:ArrayOfDiskInfo" />
+  <xs:complexType name="DiskInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FreeSpace" type="xs:double" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PercentOfFreeSpace" type="xs:double" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalSize" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DiskInfo" nillable="true" type="tns:DiskInfo" />
+  <xs:complexType name="ServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DomainName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HostName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdKey" type="ser:guid" />
+      <xs:element minOccurs="0" name="IpAdress" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerInfo" nillable="true" type="tns:ServerInfo" />
+  <xs:complexType name="PerformanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CommitTotalPages" type="xs:double" />
+      <xs:element minOccurs="0" name="CpuPercentUsage" type="xs:double" />
+      <xs:element minOccurs="0" name="PageSizeMB" type="xs:double" />
+      <xs:element minOccurs="0" name="PhysicalAvailableMB" type="xs:double" />
+      <xs:element minOccurs="0" name="PhysicalTotalMB" type="xs:double" />
+      <xs:element minOccurs="0" name="ProcessCount" type="xs:int" />
+      <xs:element minOccurs="0" name="ThreadCount" type="xs:int" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PerformanceInfo" nillable="true" type="tns:PerformanceInfo" />
+  <xs:complexType name="ArrayOfEventViewerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EventViewerInfo" nillable="true" type="tns:EventViewerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEventViewerInfo" nillable="true" type="tns:ArrayOfEventViewerInfo" />
+  <xs:complexType name="EventViewerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EventId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Index" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogDate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LogName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Source" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EventViewerInfo" nillable="true" type="tns:EventViewerInfo" />
+  <xs:complexType name="ArrayOfUlsViewerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UlsViewerInfo" nillable="true" type="tns:UlsViewerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUlsViewerInfo" nillable="true" type="tns:ArrayOfUlsViewerInfo" />
+  <xs:complexType name="UlsViewerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EventId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Level" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Process" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Thread" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Time" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UlsViewerInfo" nillable="true" type="tns:UlsViewerInfo" />
+  <xs:complexType name="ArrayOfSqlPerformanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SqlPerformanceInfo" nillable="true" type="tns:SqlPerformanceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSqlPerformanceInfo" nillable="true" type="tns:ArrayOfSqlPerformanceInfo" />
+  <xs:complexType name="SqlPerformanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExecutionCount" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastElapsedTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastExecutionTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLogicalReads" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastLogicalWrites" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastWorkerTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="QueryPlan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalElapsedTime" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalLogicalReads" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalLogicalWrites" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TotalWorkerTime" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SqlPerformanceInfo" nillable="true" type="tns:SqlPerformanceInfo" />
+  <xs:complexType name="ArrayOfServerOtherParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerOtherParams" nillable="true" type="tns:ServerOtherParams" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerOtherParams" nillable="true" type="tns:ArrayOfServerOtherParams" />
+  <xs:complexType name="ServerOtherParams">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LastUpdate" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ServerOtherParams" nillable="true" type="tns:ServerOtherParams" />
+  <xs:complexType name="ArrayOfServerInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ServerInfo" nillable="true" type="tns:ServerInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfServerInfo" nillable="true" type="tns:ArrayOfServerInfo" />
+  <xs:complexType name="ArrayOfPerformanceInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PerformanceInfo" nillable="true" type="tns:PerformanceInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPerformanceInfo" nillable="true" type="tns:ArrayOfPerformanceInfo" />
+  <xs:complexType name="ArrayOfGroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupInfo" nillable="true" type="tns:ArrayOfGroupInfo" />
+  <xs:complexType name="GroupInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GroupId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+</xs:schema>

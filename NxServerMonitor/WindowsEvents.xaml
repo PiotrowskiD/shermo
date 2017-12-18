@@ -1,0 +1,60 @@
+﻿<Page x:Class="NxServerMonitor.WindowsEvents"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NxServerMonitor"
+        mc:Ignorable="d"
+        Title="WindowsEvents" Height="auto" Width="auto" Background="#FFFEFEFE">
+    <Grid Name="MyGrid">
+        <TextBlock FontFamily="Segoe UI" FontSize="36" TextAlignment="Left" Text="WINDOWS EVENTS" Background="Transparent" Margin="30,0,0,0"/>
+        <FlowDocumentScrollViewer Margin="0,75,0,0" FontFamily="Segoe UI Light">
+            <FlowDocument>
+                <Table x:Name="WETable">
+                    <Table.Columns>
+                        <TableColumn Width="120"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn Width="80"/>
+                        <TableColumn Width="80"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Log Date"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Event Index"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Log Name"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Event Id"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Event Source"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontSize="18" FontFamily="Segoe UI Light" Text="Event Message"/>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Page>

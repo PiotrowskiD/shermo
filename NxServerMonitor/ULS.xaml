@@ -1,0 +1,66 @@
+﻿<Page x:Class="NxServerMonitor.ULS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NxServerMonitor"
+        mc:Ignorable="d"
+        Title="ULS" Height="auto" Width="auto" Background="#FFFEFEFE">
+    <Grid Name="MyGrid">
+        <TextBlock FontSize="36" FontFamily="Segoe UI" TextAlignment="Left" Text="ULS" Background="Transparent" Margin="30,0,0,0"/>
+        <FlowDocumentScrollViewer Margin="0,75,0,0" FontFamily="Segoe UI Light" VerticalScrollBarVisibility="Visible">
+            <FlowDocument>
+                <Table x:Name="ULSTable">
+                    <Table.Columns>
+                        <TableColumn Width="120"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn Width="100"/>
+                        <TableColumn/>
+                    </Table.Columns>
+                    <TableRowGroup>
+                        <TableRow>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Time"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Process"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Thread"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Category"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Event ID"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell>
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Level"/>
+                                </Paragraph>
+                            </TableCell>
+                            <TableCell >
+                                <Paragraph TextAlignment="Center">
+                                    <Run FontWeight="Bold" FontSize="18" FontFamily="Segoe UI Light" Text="Message"/>
+                                </Paragraph>
+                            </TableCell>
+                        </TableRow>
+                    </TableRowGroup>
+                </Table>
+            </FlowDocument>
+        </FlowDocumentScrollViewer>
+    </Grid>
+</Page>

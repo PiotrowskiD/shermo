@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IService1_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <sp:TransportBinding xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:TransportToken>
+              <wsp:Policy>
+                <sp:HttpsToken RequireClientCertificate="false" />
+              </wsp:Policy>
+            </sp:TransportToken>
+            <sp:AlgorithmSuite>
+              <wsp:Policy>
+                <sp:Basic256 />
+              </wsp:Policy>
+            </sp:AlgorithmSuite>
+            <sp:Layout>
+              <wsp:Policy>
+                <sp:Lax />
+              </wsp:Policy>
+            </sp:Layout>
+            <sp:IncludeTimestamp />
+          </wsp:Policy>
+        </sp:TransportBinding>
+        <sp:SignedSupportingTokens xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy>
+            <sp:UsernameToken sp:IncludeToken="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy/IncludeToken/AlwaysToRecipient">
+              <wsp:Policy>
+                <sp:WssUsernameToken10 />
+              </wsp:Policy>
+            </sp:UsernameToken>
+          </wsp:Policy>
+        </sp:SignedSupportingTokens>
+        <sp:Wss10 xmlns:sp="http://schemas.xmlsoap.org/ws/2005/07/securitypolicy">
+          <wsp:Policy />
+        </sp:Wss10>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/ServerMonitor.Model" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_UpdateDiskStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiskStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateDiskStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiskStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServerInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServerInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServerInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServerInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdatePerformanceInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerformanceInfo" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdatePerformanceInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePerformanceInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEventViewerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEventViewerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateEventViewerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateEventViewerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUlsStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUlsStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUlsStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUlsStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateSqlPerfStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSqlPerfStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateSqlPerfStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSqlPerfStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateOtherServerParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOtherServerParams" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateOtherServerParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOtherServerParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServerOtherParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerOtherParams" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServerOtherParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerOtherParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDisksStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisksStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDisksStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDisksStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSqlPerformanceStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlPerformanceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetSqlPerformanceStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlPerformanceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPerformanceStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetPerformanceStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPerformanceStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEventViewerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventViewerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEventViewerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEventViewerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUlsViewerStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUlsViewerStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUlsViewerStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUlsViewerStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroups" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUnasignedGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnasignedGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertUnasignedGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertUnasignedGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_InsertGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServicesConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServicesConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServicesConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServicesConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServicesConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetServicesConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServicesConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateAppPoolsConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppPoolsConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateAppPoolsConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAppPoolsConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppPoolsConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppPoolsConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAppPoolsConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppPoolsConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUrlConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUrlConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateUrlConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateUrlConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUrlConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUrlConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetUrlConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUrlConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMailAdressesConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailAdressesConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMailAdressesConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMailAdressesConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMailAdressesConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMailAdressesConfig" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateMailAdressesConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMailAdressesConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServerGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServerGroup" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateServerGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateServerGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllServers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServers" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAllServers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllServersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateHttpServicesStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHttpServicesStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateHttpServicesStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateHttpServicesStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetHttpServicesStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetHttpServicesStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetHttpServicesStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetHttpServicesStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="UpdateDiskStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateDiskStatus" message="tns:IService1_UpdateDiskStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateDiskStatusResponse" message="tns:IService1_UpdateDiskStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServerInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateServerInfo" message="tns:IService1_UpdateServerInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateServerInfoResponse" message="tns:IService1_UpdateServerInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerformanceInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdatePerformanceInfo" message="tns:IService1_UpdatePerformanceInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdatePerformanceInfoResponse" message="tns:IService1_UpdatePerformanceInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEventViewerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateEventViewerStatus" message="tns:IService1_UpdateEventViewerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateEventViewerStatusResponse" message="tns:IService1_UpdateEventViewerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUlsStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUlsStatus" message="tns:IService1_UpdateUlsStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUlsStatusResponse" message="tns:IService1_UpdateUlsStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSqlPerfStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateSqlPerfStatus" message="tns:IService1_UpdateSqlPerfStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateSqlPerfStatusResponse" message="tns:IService1_UpdateSqlPerfStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOtherServerParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateOtherServerParams" message="tns:IService1_UpdateOtherServerParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateOtherServerParamsResponse" message="tns:IService1_UpdateOtherServerParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerOtherParams">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetServerOtherParams" message="tns:IService1_GetServerOtherParams_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetServerOtherParamsResponse" message="tns:IService1_GetServerOtherParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDisksStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDisksStatus" message="tns:IService1_GetDisksStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDisksStatusResponse" message="tns:IService1_GetDisksStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServerName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetServerName" message="tns:IService1_GetServerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetServerNameResponse" message="tns:IService1_GetServerName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlPerformanceStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetSqlPerformanceStatus" message="tns:IService1_GetSqlPerformanceStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetSqlPerformanceStatusResponse" message="tns:IService1_GetSqlPerformanceStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetPerformanceStatus" message="tns:IService1_GetPerformanceStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetPerformanceStatusResponse" message="tns:IService1_GetPerformanceStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEventViewerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEventViewerStatus" message="tns:IService1_GetEventViewerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEventViewerStatusResponse" message="tns:IService1_GetEventViewerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUlsViewerStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUlsViewerStatus" message="tns:IService1_GetUlsViewerStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUlsViewerStatusResponse" message="tns:IService1_GetUlsViewerStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetServers" message="tns:IService1_GetServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetServersResponse" message="tns:IService1_GetServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetGroups" message="tns:IService1_GetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetGroupsResponse" message="tns:IService1_GetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnasignedGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertUnasignedGroup" message="tns:IService1_InsertUnasignedGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertUnasignedGroupResponse" message="tns:IService1_InsertUnasignedGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/InsertGroup" message="tns:IService1_InsertGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/InsertGroupResponse" message="tns:IService1_InsertGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteGroup" message="tns:IService1_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteGroupResponse" message="tns:IService1_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServicesConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateServicesConfig" message="tns:IService1_UpdateServicesConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateServicesConfigResponse" message="tns:IService1_UpdateServicesConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetServicesConfig" message="tns:IService1_GetServicesConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetServicesConfigResponse" message="tns:IService1_GetServicesConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppPoolsConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateAppPoolsConfig" message="tns:IService1_UpdateAppPoolsConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateAppPoolsConfigResponse" message="tns:IService1_UpdateAppPoolsConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppPoolsConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAppPoolsConfig" message="tns:IService1_GetAppPoolsConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAppPoolsConfigResponse" message="tns:IService1_GetAppPoolsConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUrlConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUrlConfig" message="tns:IService1_UpdateUrlConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateUrlConfigResponse" message="tns:IService1_UpdateUrlConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUrlConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUrlConfig" message="tns:IService1_GetUrlConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUrlConfigResponse" message="tns:IService1_GetUrlConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMailAdressesConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMailAdressesConfig" message="tns:IService1_GetMailAdressesConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMailAdressesConfigResponse" message="tns:IService1_GetMailAdressesConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailAdressesConfig">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateMailAdressesConfig" message="tns:IService1_UpdateMailAdressesConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateMailAdressesConfigResponse" message="tns:IService1_UpdateMailAdressesConfig_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServerGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateServerGroup" message="tns:IService1_UpdateServerGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateServerGroupResponse" message="tns:IService1_UpdateServerGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAllServers" message="tns:IService1_GetAllServers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllServersResponse" message="tns:IService1_GetAllServers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHttpServicesStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateHttpServicesStatus" message="tns:IService1_UpdateHttpServicesStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateHttpServicesStatusResponse" message="tns:IService1_UpdateHttpServicesStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHttpServicesStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetHttpServicesStatus" message="tns:IService1_GetHttpServicesStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetHttpServicesStatusResponse" message="tns:IService1_GetHttpServicesStatus_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IService1_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="UpdateDiskStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateDiskStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServerInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateServerInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePerformanceInfo">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdatePerformanceInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEventViewerStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateEventViewerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUlsStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUlsStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSqlPerfStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateSqlPerfStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOtherServerParams">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateOtherServerParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerOtherParams">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetServerOtherParams" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDisksStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDisksStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServerName">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetServerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlPerformanceStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetSqlPerformanceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPerformanceStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetPerformanceStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEventViewerStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEventViewerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUlsViewerStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUlsViewerStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroups">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUnasignedGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertUnasignedGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/InsertGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServicesConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateServicesConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetServicesConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetServicesConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAppPoolsConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateAppPoolsConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppPoolsConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAppPoolsConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUrlConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateUrlConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUrlConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetUrlConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMailAdressesConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMailAdressesConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMailAdressesConfig">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateMailAdressesConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateServerGroup">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateServerGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllServers">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAllServers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateHttpServicesStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateHttpServicesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHttpServicesStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetHttpServicesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="https://nxsp01.nexpertis.pl:21010/ServerMonitorWebService.Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
